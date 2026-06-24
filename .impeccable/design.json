@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-24T00:00:00Z",
+  "title": "Design System: AGIL Ops Mobile App",
+  "extensions": {
+    "colorMeta": {
+      "primary": { "role": "primary", "displayName": "Signal Sky", "canonical": "#0ea5e9", "tonalRamp": ["#082f49", "#0c4a6e", "#075985", "#0369a1", "#0284c7", "#0ea5e9", "#38bdf8", "#7dd3fc"] },
+      "interactive": { "role": "primary", "displayName": "Sky Interactive", "canonical": "#38bdf8", "tonalRamp": ["#0c4a6e", "#075985", "#0369a1", "#0284c7", "#0ea5e9", "#38bdf8", "#7dd3fc", "#bae6fd"] },
+      "bg": { "role": "neutral", "displayName": "True Black", "canonical": "#09090b", "tonalRamp": ["#09090b", "#18181b", "#27272a", "#3f3f46", "#52525b", "#71717a", "#a1a1aa", "#fafafa"] },
+      "text": { "role": "neutral", "displayName": "Ink", "canonical": "#fafafa", "tonalRamp": ["#27272a", "#3f3f46", "#52525b", "#71717a", "#a1a1aa", "#d4d4d8", "#e4e4e7", "#fafafa"] },
+      "text-error": { "role": "tertiary", "displayName": "Critical Red", "canonical": "#f87171", "tonalRamp": ["#450a0a", "#7f1d1d", "#991b1b", "#b91c1c", "#dc2626", "#ef4444", "#f87171", "#fca5a5"] },
+      "text-warning": { "role": "tertiary", "displayName": "High Amber", "canonical": "#fde047", "tonalRamp": ["#422006", "#713f12", "#854d0e", "#a16207", "#ca8a04", "#eab308", "#facc15", "#fde047"] },
+      "text-success": { "role": "tertiary", "displayName": "Active Green", "canonical": "#6ee7b7", "tonalRamp": ["#064e3b", "#065f46", "#047857", "#059669", "#10b981", "#34d399", "#6ee7b7", "#a7f3d0"] },
+      "text-info": { "role": "tertiary", "displayName": "Info Blue", "canonical": "#60a5fa", "tonalRamp": ["#172554", "#1e3a8a", "#1e40af", "#1d4ed8", "#2563eb", "#3b82f6", "#60a5fa", "#93c5fd"] },
+      "comms-bar-surface": { "role": "secondary", "displayName": "Comms Slate", "canonical": "#15263d", "tonalRamp": ["#0b1622", "#15263d", "#1e293b", "#2a3f5c", "#334155", "#475569", "#64748b", "#94a3b8"] }
+    },
+    "typographyMeta": {
+      "title": { "displayName": "Title", "purpose": "Screen titles (e.g. 'Incidents')." },
+      "body": { "displayName": "Body", "purpose": "Primary reading text, input values, message bodies." },
+      "label": { "displayName": "Label", "purpose": "Buttons, tab pills, list-row primary text, field labels." },
+      "caption": { "displayName": "Caption", "purpose": "Priority pills, section eyebrows, counts." }
+    },
+    "shadows": [
+      { "name": "sm", "value": "0 1px 2px rgba(16,24,40,0.05)", "purpose": "Resting lift for buttons and small controls." },
+      { "name": "sm-strong", "value": "0 1px 3px rgba(16,24,40,0.10), 0 1px 2px -1px rgba(0,0,0,0.10)", "purpose": "Cards and inputs needing a touch more separation." },
+      { "name": "lg", "value": "0 10px 15px -3px rgba(0,0,0,0.10), 0 4px 6px -4px rgba(16,24,40,0.10)", "purpose": "Floating surfaces only — status menus, sheets, dialogs." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Default easing for state transitions and sheet entrances." },
+      { "name": "duration-fast", "value": "150ms", "purpose": "Hover/focus and small state changes." }
+    ],
+    "breakpoints": [
+      { "name": "mobile", "value": "375px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The unmistakable primary action; full-width in forms.",
+      "html": "<button class=\"ds-btn-primary\">Sign in</button>",
+      "css": ".ds-btn-primary { background: #0ea5e9; color: #030712; font-family: Geist, system-ui, sans-serif; font-size: 14px; font-weight: 500; height: 48px; padding: 0 16px; border: none; border-radius: 6px; cursor: pointer; transition: background 150ms cubic-bezier(0.16,1,0.3,1); } .ds-btn-primary:hover { background: #38bdf8; } .ds-btn-primary:focus-visible { outline: 2px solid #38bdf8; outline-offset: 2px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Alternate auth and paired actions.",
+      "html": "<button class=\"ds-btn-secondary\">SSO</button>",
+      "css": ".ds-btn-secondary { background: #27272a; color: #fafafa; font-family: Geist, system-ui, sans-serif; font-size: 14px; font-weight: 500; height: 44px; padding: 0 16px; border: 1px solid #27272a; border-radius: 6px; cursor: pointer; transition: background 150ms cubic-bezier(0.16,1,0.3,1); } .ds-btn-secondary:hover { background: #3f3f46; } .ds-btn-secondary:focus-visible { outline: 2px solid #38bdf8; outline-offset: 2px; }"
+    },
+    {
+      "name": "Search Input",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Text field on the near-black canvas.",
+      "html": "<div class=\"ds-input\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#71717a\" stroke-width=\"2\"><circle cx=\"11\" cy=\"11\" r=\"7\"/><path d=\"m21 21-4.3-4.3\"/></svg><input placeholder=\"Search incidents...\" /></div>",
+      "css": ".ds-input { display: flex; align-items: center; gap: 8px; background: #18181b; border: 1px solid #27272a; border-radius: 6px; height: 44px; padding: 0 12px; } .ds-input input { background: transparent; border: none; outline: none; color: #fafafa; font-family: Geist, system-ui, sans-serif; font-size: 16px; width: 100%; } .ds-input input::placeholder { color: #71717a; } .ds-input:focus-within { border-color: #38bdf8; }"
+    },
+    {
+      "name": "Priority Pill — Critical",
+      "kind": "chip",
+      "refersTo": "pill-critical",
+      "description": "Severity badge; always paired with a word, never color alone.",
+      "html": "<span class=\"ds-pill-critical\">CRITICAL</span>",
+      "css": ".ds-pill-critical { display: inline-block; background: #450a0a; color: #f87171; font-family: Geist, system-ui, sans-serif; font-size: 12px; font-weight: 700; line-height: 16px; padding: 2px 8px; border-radius: 9999px; }"
+    },
+    {
+      "name": "Filter Tab — Active",
+      "kind": "chip",
+      "refersTo": "tab-pill-active",
+      "description": "Selected list filter; inactive siblings use #27272a / #a1a1aa.",
+      "html": "<span class=\"ds-tab-active\">All (3)</span>",
+      "css": ".ds-tab-active { display: inline-block; background: #0ea5e9; color: #030712; font-family: Geist, system-ui, sans-serif; font-size: 14px; font-weight: 500; padding: 4px 12px; border-radius: 9999px; }"
+    },
+    {
+      "name": "Incident Card",
+      "kind": "card",
+      "refersTo": "incident-card",
+      "description": "Signature row: ID + title, priority pill, location, reported time, status, responder count.",
+      "html": "<div class=\"ds-incident\"><div class=\"ds-incident-top\"><span class=\"ds-incident-title\">#1042 Structure Fire</span><span class=\"ds-pill-critical\">CRITICAL</span></div><div class=\"ds-incident-loc\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#a1a1aa\" stroke-width=\"2\"><path d=\"M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z\"/><circle cx=\"12\" cy=\"10\" r=\"3\"/></svg> 1420 Oak Street, Singapore 587710</div><div class=\"ds-incident-meta\">Reported 14:30 <span class=\"ds-status-active\">Active</span></div></div>",
+      "css": ".ds-incident { background: #09090b; border-bottom: 1px solid #27272a; padding: 12px 16px; font-family: Geist, system-ui, sans-serif; } .ds-incident-top { display: flex; align-items: center; justify-content: space-between; } .ds-incident-title { color: #fafafa; font-size: 16px; font-weight: 700; } .ds-incident-loc { display: flex; align-items: center; gap: 6px; color: #a1a1aa; font-size: 14px; margin-top: 6px; } .ds-incident-meta { color: #a1a1aa; font-size: 14px; margin-top: 6px; } .ds-status-active { color: #6ee7b7; font-weight: 600; }"
+    },
+    {
+      "name": "Talk Bar",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Persistent push-to-talk strip above the tab bar; always-available voice channel.",
+      "html": "<div class=\"ds-talkbar\"><div class=\"ds-talkbar-avatar\">A</div><div class=\"ds-talkbar-text\"><div class=\"ds-talkbar-team\">Alpha Team</div><div class=\"ds-talkbar-status\">3/3 online · Ready to talk</div></div><button class=\"ds-talkbar-mic\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"2\"><rect x=\"9\" y=\"2\" width=\"6\" height=\"12\" rx=\"3\"/><path d=\"M5 10a7 7 0 0 0 14 0M12 17v4\"/></svg></button></div>",
+      "css": ".ds-talkbar { display: flex; align-items: center; gap: 12px; background: #15263d; padding: 12px 16px; font-family: Geist, system-ui, sans-serif; } .ds-talkbar-avatar { width: 32px; height: 32px; border-radius: 9999px; background: #2a3f5c; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; } .ds-talkbar-team { color: #ffffff; font-size: 14px; font-weight: 600; } .ds-talkbar-status { color: #ffffffb2; font-size: 12px; } .ds-talkbar-mic { margin-left: auto; width: 40px; height: 40px; border-radius: 9999px; background: #ffffff26; border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Instrument Panel",
+    "overview": "This is the cockpit of an incident, not a brochure for one. The interface behaves like instrumentation: a calm, near-black field on which a small number of meaning-carrying signals — severity, status, who's online, what to do next — light up with precision. Lifted directly from the AGIL Operations Hub web console (a ShadCN dark theme), the mobile app mirrors that system so an operator moving between the control-room desk and the field never re-learns the language. The palette is a zinc-black neutral ramp with sky blue as the single interactive voice and a tight set of semantic status colors that are never decorative. Typography is one family — Geist — worked across weights, so hierarchy comes from size and weight, not from font-mixing.",
+    "keyCharacteristics": [
+      "Near-black canvas (#09090b); depth via tonal layering, not heavy shadow.",
+      "One interactive color (sky blue); status colors reserved for status only.",
+      "Single typeface (Geist) across weights; hierarchy by size/weight.",
+      "6px radius on controls; full-round only on pills and avatars.",
+      "Glanceable: severity and status readable in under a second."
+    ],
+    "rules": [
+      { "name": "The One Voice Rule", "body": "Sky blue (#0ea5e9 / #38bdf8) is the only interactive color. If something is tappable and primary, it is sky; if it is sky, it is interactive. Never use sky decoratively.", "section": "colors" },
+      { "name": "The Status-Is-Sacred Rule", "body": "Red, amber, and green appear only to convey severity or state. A green that means 'active incident' must never also be a 'submit' button.", "section": "colors" },
+      { "name": "The One Family Rule", "body": "Geist only. Do not introduce a second typeface for 'display' or 'mono'; lean on weight (300–700) and size for every level of hierarchy.", "section": "typography" },
+      { "name": "The Layer-First Rule", "body": "Reach for a lighter neutral surface before reaching for a shadow. Shadows are for things that genuinely float above the page (sheets, menus, toasts), paired with a dim background overlay.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep sky blue (#0ea5e9 / #38bdf8) as the only interactive color — the One Voice Rule.",
+      "Do reserve red/amber/green strictly for severity and status, always paired with a word or icon (WCAG: never color alone).",
+      "Do build hierarchy from Geist weights (300–700) and size, not from a second typeface.",
+      "Do convey depth with the neutral ramp first (black → subtle → secondary → elevated slate); add shadow only for floating surfaces.",
+      "Do keep controls at 6px radius and pills/avatars full-round; honor 44–48px touch targets for one-handed field use.",
+      "Do lead each screen with the current incident state and one obvious next action."
+    ],
+    "donts": [
+      "Don't ship a generic SaaS dashboard: no gradient-accent hero metrics, no background-clip:text gradient text, no identical decorative card grids.",
+      "Don't drift into cluttered legacy enterprise: no dense gray walls of controls or tiny low-contrast metadata.",
+      "Don't add overstyled flash: no glassmorphism, no neon, no heavy or bouncy motion that distracts during an incident.",
+      "Don't use a border-left/border-right colored side-stripe on cards, rows, or alerts — use full hairline borders and status pills instead.",
+      "Don't spend status color decoratively (a green 'submit' button reads as an active incident).",
+      "Don't let muted text (#a1a1aa) carry body copy where it drops below 4.5:1 — bump toward Ink (#fafafa)."
+    ]
+  }
+}
