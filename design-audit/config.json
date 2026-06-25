@@ -1,0 +1,23 @@
+{
+  "figma": {
+    "fileKey": "e6RBhSWdLlLinhceozYLYe",
+    "fileName": "AGIL-Mobile-App",
+    "watchedNodeId": "34:995",
+    "watchedNodeName": "Mobile Component",
+    "url": "https://www.figma.com/design/e6RBhSWdLlLinhceozYLYe/AGIL-Mobile-App?node-id=34-995"
+  },
+  "designSystem": {
+    "sourceOfTruth": "AOH UI/ShadCN component library",
+    "libraryKey": "lk-5ad1370120d800ae9df8518075ecf65f57bd0f77481f401dcf87b8860ebd6f9965081f9172801114b01266ba09dadf51dce50f488b1cb6b6743ce3da188c42c7",
+    "notes": "AOH UI/ShadCN is the single source of truth. Components in the watched node should be built from this library's components, variables, styles and the Geist type ramp."
+  },
+  "schedule": {
+    "cadence": "Weekdays (Mon-Fri) at 16:00 local",
+    "mechanism": "Claude Code web scheduled session",
+    "readOnly": true
+  },
+  "delivery": {
+    "report": "design-audit/reports/<YYYY-MM-DD>.md (committed to repo) + summary in chat",
+    "baseline": "design-audit/baseline/inventory.json (updated each run after diffing)"
+  }
+}
