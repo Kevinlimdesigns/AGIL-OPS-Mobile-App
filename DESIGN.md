@@ -267,6 +267,9 @@ card.
 ### Navigation — Bottom Tab Bar
 - **Style:** Five tabs (Comms, Chat, Incidents, Map, Resources) on a near-black
   bar with a top hairline. Icon over Caption label.
+- **Height:** **80dp** (the bar container). Comfortable field/glove tap targets and
+  room for the icon-over-label stack; reuse the existing Figma nav component
+  (`34:995`) rather than building a new one.
 - **States:** Active tab uses Signal Sky icon + label; inactive uses Muted Ink.
   Badges (unread) sit as small sky/red dots on the icon.
 
