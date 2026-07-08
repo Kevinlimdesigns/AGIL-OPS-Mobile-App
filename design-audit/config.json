@@ -1,0 +1,36 @@
+{
+  "figma": {
+    "fileKey": "e6RBhSWdLlLinhceozYLYe",
+    "fileName": "AGIL-Mobile-App",
+    "watchedNodeId": "34:995",
+    "watchedNodeName": "Mobile Component",
+    "url": "https://www.figma.com/design/e6RBhSWdLlLinhceozYLYe/AGIL-Mobile-App?node-id=34-995"
+  },
+  "designSystem": {
+    "sourceOfTruth": "AOH UI/ShadCN component library",
+    "sourceFileKey": "IQxwVUqzckYn7u7nNhX6lF",
+    "sourceFileName": "AOH-UI-ShadCN-component-library",
+    "sourceUrl": "https://www.figma.com/design/IQxwVUqzckYn7u7nNhX6lF/AOH-UI-ShadCN-component-library",
+    "sourceEntryNode": "3280:6182",
+    "readOnly": true,
+    "libraryKey": "lk-5ad1370120d800ae9df8518075ecf65f57bd0f77481f401dcf87b8860ebd6f9965081f9172801114b01266ba09dadf51dce50f488b1cb6b6743ce3da188c42c7",
+    "notes": "AOH UI/ShadCN (file IQxwVUqzckYn7u7nNhX6lF) is the SINGLE source of truth and is READ-ONLY — components are brought FROM it into the AGIL Mobile App (34:995), which is the only file edited. libraryKey is the published key used for importComponentByKeyAsync. Mobile components must use AOH variables/styles + the Geist type ramp."
+  },
+  "mobile": {
+    "rulesSpec": "design-audit/mobile-rules.md",
+    "benchmark": "Material 3 (reference for ergonomics only, NOT an adopted system)",
+    "m3ReferenceFileKey": "ZfL0m57nIO3j86Yfr5IoDG",
+    "m3ReferenceUrl": "https://www.figma.com/design/ZfL0m57nIO3j86Yfr5IoDG/Material-3-Design-Kit--Community-",
+    "target": "Android · Kotlin · Jetpack Compose (units: dp / sp)",
+    "notes": "Mobile components are checked against the M3-derived thresholds in mobile-rules.md: 48dp touch targets, 4/8dp spacing, body type >=14sp, safe-area insets, 4-col 16dp grid, radius tokens, pressed states."
+  },
+  "schedule": {
+    "cadence": "Weekdays (Mon-Fri) at 16:00 local",
+    "mechanism": "Claude Code web scheduled session",
+    "readOnly": true
+  },
+  "delivery": {
+    "report": "design-audit/reports/<YYYY-MM-DD>.md (committed to repo) + summary in chat",
+    "baseline": "design-audit/baseline/inventory.json (updated each run after diffing)"
+  }
+}
