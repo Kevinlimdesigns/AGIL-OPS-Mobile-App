@@ -87,6 +87,36 @@ Each row is fronted by a `Description Flow` card (9 total).
 replicated as a Dark-mode, token-bound, component-driven artboard in the Map
 Module section.
 
+## Slice 3 — Situational Awareness (SA row)
+
+Basic SA layered on top of Slice 2, vetted against the Slice 3 checklist and
+built into the Map Module as a dedicated **SA row**. Vet outcome: the Map tab's
+view/entity + in-context requirements were already covered by 4.1; the gaps
+(mini-maps, PTV, view-on-map menus) are net-new (absent from the source
+prototype) and are built here.
+
+New component: **`Map / Mini Map`** (`2736:1566`) — non-interactive SA snapshot
+(responder dot + incident pin + dashed connector + distance·ETA chip).
+Also: the `Map / Detail Drawer` **Responder** variant (`1411:31062`) gained a
+**PTV** action (row is now Message · Locate · PTT · PTV).
+
+| Requirement | Artboard | ID |
+|---|---|---|
+| Mini-map on Incident Dispatch Assgt (responder, incident, distance, ETA) | SA — Dispatch Assignment | `2746:67580` |
+| Mini-map on Incident Detail | SA — Incident Detail | `2763:6474` |
+| Map in-context PTV responder (+ Message/Locate/PTT) | SA — Map responder (PTV) | `2778:6610` |
+| Main page (Comms) context menu → View on map | SA — Comms 'View on map' | `2779:6817` |
+| Contacts context menu → view entity on map (Locate) | SA — Contact profile (Locate) | `2780:6878` |
+
+SA-row Description Flow card: `2782:68153`.
+
+Already covered by 4.1 (no new work): view Incidents / Responders / Cameras on
+the Map tab (pins + layers); in-context Create Incident, Message, PTT, and View
+camera feed.
+
+Note: ETA is a new data element (the source models `distance` only); mini-maps
+show synthesized ETA values ("ETA 4 min" / "ETA 8 min") alongside distance.
+
 ## Notes / possible follow-ups
 
 - The form artboards are static (no scroll); on a few, lower fields sit close to
