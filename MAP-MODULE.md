@@ -117,6 +117,34 @@ camera feed.
 Note: ETA is a new data element (the source models `distance` only); mini-maps
 show synthesized ETA values ("ETA 4 min" / "ETA 8 min") alongside distance.
 
+## Slice 3 · Requirement A — Dispatch Alert mini-map (BUILT)
+
+New section **"Slice 3 - Map Module"** (`2958:37291`, Map page). Adds a
+non-interactable mini-map to the incoming dispatch alert per ratified spec
+(A1–A3, S3.1, S2.2). Kept as a **scoped SA component** — the shared Dispatch
+Modal (`713:38347`, used by the Slice-2 Incident module) was left untouched.
+
+Components:
+- `Map / Dispatch Mini Map` set `2968:1794` — `State=Available` `2968:1640`
+  (self dot + dashed **direct-line** connector + incident pin + km chip) and
+  `State=Location Unavailable` `2968:1719` (incident pin only, no self dot, no
+  connector, "Your location unavailable" chip).
+- `Dispatch Modal (SA) — State=Available` `2969:1772` — dispatch card with the
+  mini-map + a labelled **"Direct-line · 3.8 km · ETA ~8 min"** row; REPORTED in km.
+- `Dispatch Modal (SA) — Location Unavailable` `3004:1857` — same card with the
+  unavailable mini-map + "Direct-line distance unavailable · Enable location"
+  (no 0/blank, no fabricated connector — S2.2).
+
+Frames:
+- `Incident — Incoming Assignment` `2958:47126` — default (GPS available); modal
+  swapped to the SA Available component.
+- `Incident — Incoming Assignment — Location Unavailable` `3004:71656`.
+- `Map Tab — Focused on Incident` `3006:8617` — tap-through target (A2/S3.1):
+  full map centred on the incident pin (pulse-ring emphasis + focus chip), Map
+  tab active, **no auto-callout**.
+
+Units: km (Singapore). ETA labelled direct-line (spec S1.3/A1); no routed figure.
+
 ## Notes / possible follow-ups
 
 - The form artboards are static (no scroll); on a few, lower fields sit close to
