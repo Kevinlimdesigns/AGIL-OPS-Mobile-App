@@ -145,6 +145,45 @@ Frames:
 
 Units: km (Singapore). ETA labelled direct-line (spec S1.3/A1); no routed figure.
 
+## Map callout freshness + feed-state (BUILT — reuse-only, no new components)
+
+Added freshness/feed status to the shared `Map/ Bottom Sheet Menu`
+(`3316:43247`) callouts by **reusing the existing `status chip`
+(`3498:98437`)** — no new component, no new variant axis (the set stays
+single-axis on `Context`). Decisions ratified with Kevin before any write.
+
+- **Responder callout freshness (PART 1)** — `Context=Responder`
+  (`3403:153811`) header gained a `status chip` instance (`3534:3`),
+  token-bound `color-text-success`, label **"Live"**, mirroring the Camera/Drone
+  header layout (`Frame 4` → FILL). Two-state model per Kevin ("just live and
+  dead — **no Stale**"): callout `Live` chip ↔ `Map Pin/ Responder`
+  (`3329:58536`) **Live** variant; dead ↔ **Lost** variant (chip instance
+  overridden to Inactive/"Lost"). No `Stale` pin variant created (a canvas note
+  — `3388:95036` — explicitly says not to).
+- **Camera/Drone feed-state (PART 3)** — both callouts already consumed the
+  `status chip`; relabelled the shared 3 states to feed vocabulary:
+  `State=Default` → **Live** (success), `State=Inactive` → **No transmission**
+  (muted), `State=Error` → **No access** (unchanged). Camera (`3498:98451`) and
+  Drone (`3498:98444`) chips now read "Live" by inheritance. **Label-only** per
+  Kevin (no dot, no lock glyph — colour + label already satisfies "never status
+  by colour alone").
+
+**PART 2 (Req 19 — disabled-with-reason Menu Item) DEFERRED.** The referenced
+Comms "Bottom Sheet Menu / Locate-on-map row" does not exist: `3450:79802` and
+`3450:95236` are both `Comms Module/ Drawer` frames built from **Comms Cards**,
+the `Menu Item` sets (`3098:19`, `3072:1879`) carry only Kind=Default/Destructive,
+and no "Locate on map" row is present. Revisit once the correct target is
+confirmed.
+
+Findings (pre-existing, not introduced here):
+- `Parts/Divider > Frame 8` uses raw `#ffffff` @ opacity 1 across all callout
+  contexts — shared Divider component; flag per AOH-ADHERENCE.
+- Close button (`x`) sits at a fixed x=300 and overlaps the header chip's
+  trailing edge (right=320) identically on Camera/Drone/Responder — pre-existing
+  family layout; matched rather than diverged.
+- `Live Badge` (`524:406`) dot binds to `severity/critical` (red), not a
+  presence/success green — worth a semantics check.
+
 ## Notes / possible follow-ups
 
 - The form artboards are static (no scroll); on a few, lower fields sit close to
