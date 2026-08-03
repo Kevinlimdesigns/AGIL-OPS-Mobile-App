@@ -302,3 +302,38 @@ card.
 - **Don't** use a `border-left`/`border-right` colored side-stripe on cards, rows, or alerts — use full hairline borders and status pills instead.
 - **Don't** spend status color decoratively (a green "submit" button reads as an active incident).
 - **Don't** let muted text (#a1a1aa) carry body copy where it drops below 4.5:1 — bump toward Ink (#fafafa).
+
+## 7. Component Library Verification
+
+Before any design is confirmed **done**, verify it against the component library.
+A design is not complete until every element resolves to an existing library
+component or a documented, intentional exception. Reuse-first is the rule (see
+`CLAUDE.md` → **Reuse first**); this checklist is the gate that enforces it.
+
+### Verify against the library
+- [ ] Every component maps to an existing component in Figma `34:995` or
+      `design-audit/baseline/inventory.json` — no redrawn duplicates, no invented
+      one-offs (73+ components already exist; build on them).
+- [ ] Components pulled from the **AOH ShadCN source** (`IQxwVUqzckYn7u7nNhX6lF`)
+      were brought FROM there, not rebuilt.
+- [ ] Variants and states match the library (default / hover / focus / error /
+      active / disabled) rather than being visually approximated.
+
+### Verify tokens & semantics
+- [ ] All colors are semantic tokens from this file — **no raw hex**.
+- [ ] Color/type stay **AOH** (`color-*` / `severity/*`, `text-*` / `font-*`);
+      Material 3 governs **geometry/ergonomics only**.
+- [ ] Color semantics are correct: critical=red, high=orange, medium=blue,
+      low=muted; blue reserved for route/selection, green for confirm/arrival.
+- [ ] Status is never conveyed by color alone — paired with icon/label/shape.
+- [ ] Tap targets, nav bar (80dp), and touch geometry meet the sizing rules and
+      benchmark cleanly against Material 3.
+
+### Verify parity & gaps
+- [ ] Dark **and** light both work; offline / weak-signal state is handled.
+- [ ] Anything not yet in the library is flagged as a **gap** (propose, don't
+      create) — never silently improvised.
+- [ ] Naming matches library conventions.
+
+**Sign-off:** Do not confirm "design done" until every box is checked, or each
+unchecked box has a documented reason.
