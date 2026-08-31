@@ -1,11 +1,11 @@
 {
-  "snapshotDate": "2026-08-29 (audit)",
+  "snapshotDate": "2026-08-31 (audit)",
   "fileKey": "e6RBhSWdLlLinhceozYLYe",
   "watchedNodeId": "34:995",
   "watchedNodeName": "Mobile Component Library",
   "componentCount": "unresolved — header label still reads 113 but is stale; not recounted this run given the Map + chat-bubble detachments",
   "structure": "As of 2026-08-29, the watched node's child tree runs Foundations (3975:2032) -> Global (3975:2035) -> Shared (3975:2038) -> Comms (3975:2041, empty) -> Chat (3975:2044) -> Incident (3975:2047) -> [loose orphan symbol 'Icon/ Drone' 4075:64536] -> Resources (3975:2053, empty) -> Login (3975:2056). The ▚ Map section (previously 3975:2050) is ABSENT from this tree entirely (not just empty — no section wrapper). Header label (3987:123) still reads '113 components · 9 modules ... Map ...' and is now stale/inaccurate.",
-  "note": "2026-08-29: Confirmed via get_metadata on 34:995 that the Map section frame is gone from the tree, and via get_metadata on 3975:2046 (Chat/grid) that the chat-bubble family (Chat/Bubble, Chat/Bubbles, Video/Location bubbles, fragmented audio/voice symbols) is also absent from Chat. Spot-checked by direct node id: Map Pins (3654:50515), Map/ Bottom Drawer Menu (3316:43247), and the old Chat/Bubble id (129:142, now renamed 'Chat / Text Bubble' with a reworked User x Type variant set) ALL still resolve and still hold real content -- i.e. not deleted, just detached from 34:995's tracked structure (their current parent/location is unverified). Remaining ~18 Map components and ~7 other bubble-family components were NOT individually re-verified this run. Comms and Resources sections remain empty for a 3rd consecutive audit. See design-audit/reports/2026-08-29.md for full findings.",
+  "note": "2026-08-31: get_metadata on 34:995 and get_variable_defs on 34:995 are BYTE-IDENTICAL to the 2026-08-29 snapshot -- same 59 top-level components/sets, same ids/names/variants, same bound-token set. No new components, no removed components, no new duplicates. Every flag from 2026-08-29 (Map section absence, chat-bubble family absence, 97:2007 corrupted name, orphan Icon/ Drone duplicate, empty Comms/Resources, un-renamed Option Context menu variant property, no-slash Chat Header naming, generic 'Chat' frame name, stale header label) persists unchanged. Not individually re-verified by direct node id this run since the tracked-node metadata gave no reason to re-check (see design-audit/reports/2026-08-29.md for the prior direct-id spot-checks). Comms and Resources sections remain empty for a 4th consecutive audit. See design-audit/reports/2026-08-31.md for full findings.",
   "components": [
     { "id": "1112:12167", "name": "Android-nav-bar", "type": "component_set", "variants": ["Dark-mode=false", "Dark-mode=true"], "tier": "Global" },
     { "id": "1980:1715", "name": "Avatar", "type": "component_set", "variants": ["Type=Person, Presence=Online", "Type=Person, Presence=Offline", "Type=Group, Presence=Online", "Type=Group, Presence=Offline", "Type=Incident, Presence=Online", "Type=Incident, Presence=Offline", "Type=Mute, Presence=Online", "Type=Mute, Presence=Offline"], "tier": "Global" },
@@ -73,8 +73,8 @@
     { "name": "icon/x (1802:3142), icon/send (1802:3146)", "note": "Not found under Global this run; no confirmed successor or new location." }
   ],
   "emptySections": [
-    { "id": "3975:2041", "name": "▚ Comms", "gridId": "3975:2043", "note": "empty for 3rd consecutive audit; comms/avatar-surface + comms/bar-text-primary tokens still bound within 34:995; new PTV Feed (3233:32953) filed under Chat instead" },
-    { "id": "3975:2053", "name": "▚ Resources", "gridId": "3975:2055", "note": "empty for 3rd consecutive audit; Resource / Responder Row (1058:616) still unlocatable" }
+    { "id": "3975:2041", "name": "▚ Comms", "gridId": "3975:2043", "note": "empty for 4th consecutive audit; comms/avatar-surface + comms/bar-text-primary tokens still bound within 34:995; PTV Feed (3233:32953) still filed under Chat instead" },
+    { "id": "3975:2053", "name": "▚ Resources", "gridId": "3975:2055", "note": "empty for 4th consecutive audit; Resource / Responder Row (1058:616) still unlocatable" }
   ],
   "localTokens": [
     "comms/avatar-surface", "comms/bar-text-primary"
